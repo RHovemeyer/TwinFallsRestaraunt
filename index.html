@@ -1,3 +1,7 @@
+The updated code now includes high-quality representative images for the menu items while maintaining the responsive layout and the placeholder for future additions.
+
+Web Page Draft v3
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +11,8 @@
     <title>Menu & Dining | Twin Falls Resort State Park Restaurant | Mullens, WV</title>
     <style>
         :root {
-            --forest-green: #2d4a22; /* Matches logo 'state parks' */
-            --rhodo-pink: #f2ccc1;  /* Matches logo flower */
+            --forest-green: #2d4a22;
+            --rhodo-pink: #f2ccc1;
             --stone-gray: #f4f4f4;
             --text-dark: #333;
         }
@@ -24,12 +28,6 @@
             padding: 2rem 1rem;
             text-align: center;
         }
-        .header-brand {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
         .logo {
             max-width: 150px;
             height: auto;
@@ -40,8 +38,7 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin: 0;
-            font-size: 1.2rem;
-            color: var(--rhodo-pink); /* Accent color from logo */
+            color: var(--rhodo-pink);
         }
         .container {
             max-width: 1000px;
@@ -62,61 +59,63 @@
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin: 2rem 0;
         }
         .menu-category h3 {
             border-bottom: 2px solid var(--forest-green);
             padding-bottom: 0.5rem;
             color: var(--forest-green);
+            margin-top: 2rem;
         }
         .menu-item {
             display: flex;
-            justify-content: space-between;
+            gap: 1.5rem;
+            margin: 2rem 0;
             align-items: flex-start;
-            margin: 1.5rem 0;
+        }
+        .menu-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
         }
         .menu-item-text {
             flex-grow: 1;
         }
-        .menu-item h4 {
-            margin: 0 0 0.25rem 0;
-            font-weight: 600;
-        }
-        .menu-item-desc {
-            font-size: 0.95rem;
-            color: #555;
-            margin: 0;
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
         }
         .menu-item-price {
             font-weight: bold;
-            font-size: 1.1rem;
-            margin-left: 1.5rem;
-            color: var(--text-dark);
+            color: var(--forest-green);
+        }
+        .placeholder-box {
+            border: 2px dashed #ccc;
+            padding: 2rem;
+            text-align: center;
+            background: #fafafa;
+            margin-top: 2rem;
+            color: #777;
         }
         footer {
             text-align: center;
             padding: 2rem;
-            font-size: 0.9rem;
             background: #eee;
+            margin-top: 3rem;
         }
         @media (max-width: 600px) {
-            header h1 { font-size: 1.3rem; }
-            .header-text p { font-size: 1rem; }
-            .menu-section { padding: 1rem; }
             .menu-item { flex-direction: column; }
-            .menu-item-price { margin-left: 0; margin-top: 0.5rem; }
+            .menu-img { width: 100%; height: 200px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="header-brand">
-        <img src="image_0.png" alt="West Virginia State Parks Logo, featuring a blooming Rhododendron flower." class="logo">
-        <div class="header-text">
-            <p>Twin Falls Resort State Park</p>
-        </div>
-    </div>
+    <img src="wvsp-logo-dark.svg" alt="West Virginia State Parks Logo" class="logo">
+    <div class="header-text"><p>Twin Falls Resort State Park</p></div>
     <h1>Restaurant Dining</h1>
 </header>
 
@@ -124,47 +123,56 @@
     <section class="info-grid">
         <div>
             <h3>Location & Contact</h3>
-            <p><strong>Address:</strong><br>Route 97, P.O. Box 667<br>Mullens, WV 25882</p>
+            <p>Route 97, P.O. Box 667<br>Mullens, WV 25882</p>
             <p><strong>Phone:</strong> (304) 294-4000</p>
         </div>
         <div>
-            <h3>Lodge & Dining Hours</h3>
-            <p><strong>Lodge Services:</strong> 24/7 Daily</p>
-            <p><em>*Please inquire for seasonal variations and specific meal times (Breakfast, Lunch, Dinner).</em></p>
+            <h3>Hours</h3>
+            <p><strong>Lodge:</strong> 24/7 Daily</p>
+            <p><em>Call for seasonal dining room hours.</em></p>
         </div>
     </section>
 
-    <section id="menu" class="menu-section">
+    <section class="menu-section">
         <h2>Our Menu</h2>
-        <p>Featuring down-home West Virginia hospitality and specialty dishes. Availability of seasonal items may vary.</p>
         
         <div class="menu-category">
             <h3>Appetizers</h3>
             <div class="menu-item">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/14488473204894093950_0" alt="Fried Green Tomatoes" class="menu-img">
                 <div class="menu-item-text">
-                    <h4>Hand-Breaded Fried Green Tomatoes</h4>
-                    <p class="menu-item-desc">A classic regional specialty, crispy fried green tomatoes served with a dipping sauce.</p>
+                    <div class="menu-item-header">
+                        <h4>Hand-Breaded Fried Green Tomatoes</h4>
+                        <span class="menu-item-price">$13.00</span>
+                    </div>
+                    <p>A regional classic, crispy and served with our signature dipping sauce.</p>
                 </div>
-                <div class="menu-item-price">$13.00</div>
             </div>
-            </div>
+        </div>
 
         <div class="menu-category">
             <h3>Entrées</h3>
             <div class="menu-item">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/16223491383276639566_0" alt="Specialized Entree" class="menu-img">
                 <div class="menu-item-text">
-                    <h4>The 'Twin Falls' Specialized Entrée</h4>
-                    <p class="menu-item-desc">A hearty and unique dish curated by our chef, inspired by local flavors and seasonal ingredients.</p>
+                    <div class="menu-item-header">
+                        <h4>Twin Falls Signature Entrée</h4>
+                        <span class="menu-item-price">$17.00</span>
+                    </div>
+                    <p>A chef-curated seasonal selection highlighting local West Virginia flavors.</p>
                 </div>
-                <div class="menu-item-price">$17.00</div>
             </div>
-            </div>
+        </div>
+
+        <div class="placeholder-box">
+            <p><strong>[Additional Menu Items Placeholder]</strong></p>
+            <p>New seasonal selections are added frequently. Check back for updates.</p>
+        </div>
     </section>
 </div>
 
 <footer>
     <p>&copy; 2026 Twin Falls Resort State Park. All rights reserved.</p>
-    <p>A West Virginia State Park</p>
 </footer>
 
 </body>
